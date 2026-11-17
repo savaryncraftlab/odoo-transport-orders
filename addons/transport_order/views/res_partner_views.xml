@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Partner form: "Carrier" checkbox and a smart button with the partner's transport orders. -->
+    <record id="res_partner_view_form_transport" model="ir.ui.view">
+        <field name="name">res.partner.form.transport</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_view_transport_orders" type="object" class="oe_stat_button"
+                        icon="fa-truck" groups="transport_order.group_transport_user">
+                    <field name="transport_order_count" widget="statinfo" string="Transport Orders"/>
+                </button>
+            </div>
+            <field name="category_id" position="after">
+                <field name="is_carrier"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="res_partner_view_search_transport" model="ir.ui.view">
+        <field name="name">res.partner.search.transport</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <filter name="type_company" position="after">
+                <filter string="Carriers" name="carriers" domain="[('is_carrier', '=', True)]"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="transport_carrier_action" model="ir.actions.act_window">
+        <field name="name">Carriers</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,kanban,form</field>
+        <field name="domain">[('is_carrier', '=', True)]</field>
+        <field name="context">{'default_is_carrier': True, 'default_is_company': True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add a carrier</p>
+            <p>Carriers are external transport companies you hand orders over to.</p>
+        </field>
+    </record>
+
+    <record id="transport_client_action" model="ir.actions.act_window">
+        <field name="name">Clients</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,kanban,form</field>
+        <field name="domain">[('is_carrier', '=', False), ('is_company', '=', True)]</field>
+        <field name="context">{'default_is_company': True}</field>
+    </record>
+</odoo>

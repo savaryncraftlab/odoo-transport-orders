@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_carrier_order" model="ir.actions.report">
+        <field name="name">Carrier Order</field>
+        <field name="model">transport.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">transport_order.report_carrier_order</field>
+        <field name="report_file">transport_order.report_carrier_order</field>
+        <field name="print_report_name">'Carrier order %s' % object.name.replace('/', '-')</field>
+        <field name="binding_model_id" ref="model_transport_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- The document goes to the carrier, so it shows the carrier price only:
+         never the client price, the margin, the client's name or the internal notes. -->
+    <template id="report_carrier_order_document">
+        <t t-call="web.external_layout">
+            <t t-set="address">
+                <div t-field="o.carrier_id"
+                     t-options='{"widget": "contact", "fields": ["address", "name", "vat"], "no_marker": True}'/>
+            </t>
+            <div class="page">
+                <h2>Carrier Order <span t-field="o.name"/></h2>
+
+                <div class="row mt-3 mb-3">
+                    <div class="col-4">
+                        <strong>Date:</strong>
+                        <span t-out="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d')"/>
+                    </div>
+                    <div class="col-4" t-if="o.client_ref">
+                        <strong>Loading reference:</strong> <span t-field="o.client_ref"/>
+                    </div>
+                    <div class="col-4" t-if="o.user_id">
+                        <strong>Dispatcher:</strong> <span t-field="o.user_id"/>
+                        <t t-if="o.user_id.phone"><br/><span t-field="o.user_id.phone"/></t>
+                    </div>
+                </div>
+
+                <h4>Route</h4>
+                <table class="table table-sm o_main_table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Type</th>
+                            <th>Date</th>
+                            <th>Hours</th>
+                            <th>Place</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="o.stop_ids" t-as="stop">
+                            <td><t t-out="stop_index + 1"/></td>
+                            <td><span t-field="stop.stop_type"/></td>
+                            <td><span t-field="stop.date"/></td>
+                            <td><span t-field="stop.time_window"/></td>
+                            <td>
+                                <span t-if="stop.place_name" t-field="stop.place_name"/><br t-if="stop.place_name"/>
+                                <span t-field="stop.street"/>
+                                <span t-field="stop.zip"/> <span t-field="stop.city"/>,
+                                <span t-field="stop.country_id.code"/>
+                            </td>
+                            <td><span t-field="stop.note"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Cargo</h4>
+                <table class="table table-sm">
+                    <tr>
+                        <td><strong>Vehicle</strong></td>
+                        <td><span t-field="o.vehicle_type"/></td>
+                        <td><strong>Weight</strong></td>
+                        <td><t t-out="'{:,.0f}'.format(o.weight_kg)"/> kg</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cargo</strong></td>
+                        <td><span t-field="o.cargo_description"/></td>
+                        <td><strong>ADR</strong></td>
+                        <td><t t-out="'Yes' if o.is_adr else 'No'"/></td>
+                    </tr>
+                </table>
+
+                <h4>Freight</h4>
+                <p>
+                    Agreed freight, net:
+                    <strong><span t-field="o.carrier_price" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></strong>
+                </p>
+                <p class="small">
+                    Please confirm this order by return e-mail. Send the signed CMR and the invoice
+                    with this order number. Reloading the goods onto another vehicle requires our written consent.
+                </p>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_carrier_order">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="transport_order.report_carrier_order_document" t-lang="o.carrier_id.lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_transport_order_user,transport.order dispatcher,model_transport_order,group_transport_user,1,1,1,0
+access_transport_order_manager,transport.order manager,model_transport_order,group_transport_manager,1,1,1,1
+access_transport_order_stop_user,transport.order.stop dispatcher,model_transport_order_stop,group_transport_user,1,1,1,1

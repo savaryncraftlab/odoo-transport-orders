@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_transport_root" name="Transport" sequence="40"
+              web_icon="transport_order,static/description/icon.png"
+              groups="transport_order.group_transport_user"/>
+
+    <menuitem id="menu_transport_orders" name="Orders" parent="menu_transport_root"
+              action="transport_order_action" sequence="10"/>
+    <menuitem id="menu_transport_analysis" name="Margin Analysis" parent="menu_transport_root"
+              action="transport_order_action_analysis" sequence="20"/>
+
+    <menuitem id="menu_transport_partners" name="Partners" parent="menu_transport_root" sequence="30"/>
+    <menuitem id="menu_transport_clients" name="Clients" parent="menu_transport_partners"
+              action="transport_client_action" sequence="10"/>
+    <menuitem id="menu_transport_carriers" name="Carriers" parent="menu_transport_partners"
+              action="transport_carrier_action" sequence="20"/>
+</odoo>

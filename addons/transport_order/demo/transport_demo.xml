@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Demo data only: every company and person below is made up. -->
+
+    <record id="base.EUR" model="res.currency">
+        <field name="active" eval="True"/>
+    </record>
+
+    <!-- The demo user "Marc Demo" works as a dispatcher (no delete, no reopening of cancelled orders). -->
+    <record id="group_transport_user" model="res.groups">
+        <field name="user_ids" eval="[Command.link(ref('base.user_demo'))]"/>
+    </record>
+
+    <!-- Clients -->
+    <record id="partner_client_mebelpol" model="res.partner">
+        <field name="name">Mebel-Pol Demo Sp. z o.o.</field>
+        <field name="is_company" eval="True"/>
+        <field name="city">Kępno</field>
+        <field name="zip">63-600</field>
+        <field name="country_id" ref="base.pl"/>
+    </record>
+    <record id="partner_client_holzbau" model="res.partner">
+        <field name="name">Holzbau Demo GmbH</field>
+        <field name="is_company" eval="True"/>
+        <field name="city">Leipzig</field>
+        <field name="zip">04109</field>
+        <field name="country_id" ref="base.de"/>
+    </record>
+    <record id="partner_client_nordwerk" model="res.partner">
+        <field name="name">Nordwerk Demo Logistik GmbH</field>
+        <field name="is_company" eval="True"/>
+        <field name="city">Hamburg</field>
+        <field name="zip">20095</field>
+        <field name="country_id" ref="base.de"/>
+    </record>
+
+    <!-- Carriers -->
+    <record id="partner_carrier_wiatr" model="res.partner">
+        <field name="name">Wiatr Trans Demo Sp. z o.o.</field>
+        <field name="is_company" eval="True"/>
+        <field name="is_carrier" eval="True"/>
+        <field name="street">ul. Przykładowa 1</field>
+        <field name="city">Ostrów Wielkopolski</field>
+        <field name="zip">63-400</field>
+        <field name="country_id" ref="base.pl"/>
+        <field name="lang">en_US</field>
+    </record>
+    <record id="partner_carrier_szybki" model="res.partner">
+        <field name="name">Szybki Kurs Demo s.c.</field>
+        <field name="is_company" eval="True"/>
+        <field name="is_carrier" eval="True"/>
+        <field name="street">ul. Testowa 7</field>
+        <field name="city">Kalisz</field>
+        <field name="zip">62-800</field>
+        <field name="country_id" ref="base.pl"/>
+        <field name="lang">en_US</field>
+    </record>
+
+    <!-- Orders. They are created as Draft; the function calls at the end move them through the status flow. -->
+    <record id="order_demo_1" model="transport.order">
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="client_id" ref="partner_client_mebelpol"/>
+        <field name="client_ref">MP-24517</field>
+        <field name="carrier_id" ref="partner_carrier_wiatr"/>
+        <field name="currency_id" ref="base.EUR"/>
+        <field name="client_price">1350</field>
+        <field name="carrier_price">1050</field>
+        <field name="vehicle_type">mega</field>
+        <field name="cargo_description">Upholstered furniture, 33 pallets</field>
+        <field name="weight_kg">9800</field>
+        <field name="stop_ids" eval="[
+            Command.create({'sequence': 10, 'stop_type': 'loading', 'date': (DateTime.today() - relativedelta(days=12)).strftime('%Y-%m-%d'),
+                            'time_window': '07:00-12:00', 'place_name': 'Mebel-Pol Demo, warehouse 2', 'zip': '63-600', 'city': 'Kępno', 'country_id': ref('base.pl')}),
+            Command.create({'sequence': 20, 'stop_type': 'unloading', 'date': (DateTime.today() - relativedelta(days=11)).strftime('%Y-%m-%d'),
+                            'time_window': '08:00-16:00', 'place_name': 'Furniture store', 'zip': '10115', 'city': 'Berlin', 'country_id': ref('base.de')}),
+        ]"/>
+    </record>
+
+    <record id="order_demo_2" model="transport.order">
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="client_id" ref="partner_client_holzbau"/>
+        <field name="client_ref">HB-8812</field>
+        <field name="carrier_id" ref="partner_carrier_szybki"/>
+        <field name="currency_id" ref="base.EUR"/>
+        <field name="client_price">1980</field>
+        <field name="carrier_price">2050</field>
+        <field name="vehicle_type">curtainsider</field>
+        <field name="cargo_description">Wooden panels, 24 pallets</field>
+        <field name="weight_kg">21500</field>
+        <field name="notes">Carrier price went up after the client had already agreed. Talk to the client about the next loads.</field>
+        <field name="stop_ids" eval="[
+            Command.create({'sequence': 10, 'stop_type': 'loading', 'date': (DateTime.today() - relativedelta(days=9)).strftime('%Y-%m-%d'),
+                            'zip': '63-400', 'city': 'Ostrów Wielkopolski', 'country_id': ref('base.pl')}),
+            Command.create({'sequence': 20, 'stop_type': 'unloading', 'date': (DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d'),
+                            'zip': '69001', 'city': 'Lyon', 'country_id': ref('base.fr')}),
+        ]"/>
+    </record>
+
+    <record id="order_demo_3" model="transport.order">
+        <field name="client_id" ref="partner_client_nordwerk"/>
+        <field name="client_ref">NW-55102</field>
+        <field name="carrier_id" ref="partner_carrier_wiatr"/>
+        <field name="user_id" ref="base.user_demo"/>
+        <field name="currency_id" ref="base.EUR"/>
+        <field name="client_price">1450</field>
+        <field name="carrier_price">1150</field>
+        <field name="vehicle_type">curtainsider</field>
+        <field name="cargo_description">Household appliances, 30 pallets</field>
+        <field name="weight_kg">12400</field>
+        <field name="stop_ids" eval="[
+            Command.create({'sequence': 10, 'stop_type': 'loading', 'date': (DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d'),
+                            'zip': '60-001', 'city': 'Poznań', 'country_id': ref('base.pl'), 'note': 'Gate 4, loading ref NW-55102'}),
+            Command.create({'sequence': 20, 'stop_type': 'unloading', 'date': DateTime.today().strftime('%Y-%m-%d'),
+                            'zip': '20095', 'city': 'Hamburg', 'country_id': ref('base.de')}),
+            Command.create({'sequence': 30, 'stop_type': 'unloading', 'date': (DateTime.today() + relativedelta(days=1)).strftime('%Y-%m-%d'),
+                            'zip': '28195', 'city': 'Bremen', 'country_id': ref('base.de')}),
+        ]"/>
+    </record>
+
+    <record id="order_demo_4" model="transport.order">
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="client_id" ref="partner_client_mebelpol"/>
+        <field name="client_ref">MP-24601</field>
+        <field name="carrier_id" ref="partner_carrier_szybki"/>
+        <field name="currency_id" ref="base.EUR"/>
+        <field name="client_price">1700</field>
+        <field name="carrier_price">1380</field>
+        <field name="vehicle_type">mega</field>
+        <field name="cargo_description">Sofas, 28 pallets</field>
+        <field name="weight_kg">8300</field>
+        <field name="stop_ids" eval="[
+            Command.create({'sequence': 10, 'stop_type': 'loading', 'date': (DateTime.today() + relativedelta(days=2)).strftime('%Y-%m-%d'),
+                            'time_window': '07:00-12:00', 'zip': '63-600', 'city': 'Kępno', 'country_id': ref('base.pl')}),
+            Command.create({'sequence': 20, 'stop_type': 'unloading', 'date': (DateTime.today() + relativedelta(days=3)).strftime('%Y-%m-%d'),
+                            'zip': '3011', 'city': 'Rotterdam', 'country_id': ref('base.nl')}),
+        ]"/>
+    </record>
+
+    <record id="order_demo_5" model="transport.order">
+        <field name="client_id" ref="partner_client_holzbau"/>
+        <field name="user_id" ref="base.user_demo"/>
+        <field name="currency_id" ref="base.EUR"/>
+        <field name="client_price">1250</field>
+        <field name="vehicle_type">curtainsider</field>
+        <field name="cargo_description">Timber, 20 pallets</field>
+        <field name="weight_kg">18000</field>
+        <field name="stop_ids" eval="[
+            Command.create({'sequence': 10, 'stop_type': 'loading', 'date': (DateTime.today() + relativedelta(days=5)).strftime('%Y-%m-%d'),
+                            'zip': '50-001', 'city': 'Wrocław', 'country_id': ref('base.pl')}),
+            Command.create({'sequence': 20, 'stop_type': 'unloading', 'date': (DateTime.today() + relativedelta(days=6)).strftime('%Y-%m-%d'),
+                            'zip': '80331', 'city': 'München', 'country_id': ref('base.de')}),
+        ]"/>
+    </record>
+
+    <record id="order_demo_6" model="transport.order">
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="client_id" ref="partner_client_nordwerk"/>
+        <field name="carrier_id" ref="partner_carrier_szybki"/>
+        <field name="currency_id" ref="base.EUR"/>
+        <field name="client_price">980</field>
+        <field name="carrier_price">800</field>
+        <field name="cargo_description">Paper rolls, 12 pallets</field>
+        <field name="weight_kg">9000</field>
+        <field name="stop_ids" eval="[
+            Command.create({'sequence': 10, 'stop_type': 'loading', 'date': (DateTime.today() + relativedelta(days=4)).strftime('%Y-%m-%d'),
+                            'zip': '90-001', 'city': 'Łódź', 'country_id': ref('base.pl')}),
+            Command.create({'sequence': 20, 'stop_type': 'unloading', 'date': (DateTime.today() + relativedelta(days=5)).strftime('%Y-%m-%d'),
+                            'zip': '04109', 'city': 'Leipzig', 'country_id': ref('base.de')}),
+        ]"/>
+    </record>
+
+    <function model="transport.order" name="action_confirm"
+              eval="[[ref('order_demo_1'), ref('order_demo_2'), ref('order_demo_3'), ref('order_demo_4')]]"/>
+    <function model="transport.order" name="action_start_transit"
+              eval="[[ref('order_demo_1'), ref('order_demo_2'), ref('order_demo_3')]]"/>
+    <function model="transport.order" name="action_deliver"
+              eval="[[ref('order_demo_1'), ref('order_demo_2')]]"/>
+    <function model="transport.order" name="action_cancel"
+              eval="[[ref('order_demo_6')]]"/>
+</odoo>
