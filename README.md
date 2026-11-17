@@ -23,6 +23,7 @@ and I checked the result in Odoo and with the automated tests.
 | Access | Dispatcher: full daily work, no delete. Manager: can delete draft/cancelled orders and reopen cancelled ones. Multi-company record rules |
 | Views | List, form with chatter (field tracking), kanban by status, pivot and graph for margin by carrier and month, search filters and group-bys |
 | Partners | "Carrier" checkbox on contacts, Clients and Carriers menus, smart button with the partner's orders |
+| Languages | English source strings, full Ukrainian translation (`i18n/uk.po`). The carrier order PDF is printed in the carrier's language (`t-lang`) |
 
 ## Screenshots
 
@@ -48,6 +49,8 @@ All data below is made-up demo data.
 [docs/carrier_order_example.pdf](docs/carrier_order_example.pdf).
 
 ![Carrier order](docs/05_carrier_order.png)
+
+The same screens and the PDF with the Ukrainian translation: [docs/uk/](docs/uk/).
 
 ## Run it
 
@@ -113,7 +116,7 @@ addons/transport_order/
   `res.currency` rates is the next step.
 - No invoicing: the natural next step is creating the client invoice and the carrier bill in
   Odoo Accounting from a delivered order.
-- English only; Polish and Ukrainian translations (`i18n/*.po`) are planned.
+- Polish translation (`i18n/pl.po`) is planned; Ukrainian is done.
 
 ## License
 

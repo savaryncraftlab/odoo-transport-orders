@@ -77,7 +77,7 @@
                         <td><strong>Cargo</strong></td>
                         <td><span t-field="o.cargo_description"/></td>
                         <td><strong>ADR</strong></td>
-                        <td><t t-out="'Yes' if o.is_adr else 'No'"/></td>
+                        <td><t t-if="o.is_adr">Yes</t><t t-else="">No</t></td>
                     </tr>
                 </table>
 

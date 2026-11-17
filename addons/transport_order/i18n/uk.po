@@ -1,0 +1,830 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* transport_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20261112\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-17 11:02+0000\n"
+"PO-Revision-Date: 2026-11-17 11:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: transport_order
+#: model:ir.actions.report,print_report_name:transport_order.action_report_carrier_order
+msgid "'Carrier order %s' % object.name.replace('/', '-')"
+msgstr "'Заявка перевізнику %s' % object.name.replace('/', '-')"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "<strong>ADR</strong>"
+msgstr "<strong>ADR</strong>"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "<strong>Cargo</strong>"
+msgstr "<strong>Вантаж</strong>"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "<strong>Date:</strong>"
+msgstr "<strong>Дата:</strong>"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "<strong>Dispatcher:</strong>"
+msgstr "<strong>Диспетчер:</strong>"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "<strong>Loading reference:</strong>"
+msgstr "<strong>Номер завантаження:</strong>"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "<strong>Vehicle</strong>"
+msgstr "<strong>Транспорт</strong>"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "<strong>Weight</strong>"
+msgstr "<strong>Вага</strong>"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__is_adr
+msgid "ADR"
+msgstr "ADR"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__message_needaction
+msgid "Action Needed"
+msgstr "Необхідна дія"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__activity_ids
+msgid "Activities"
+msgstr "Дії"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Оформлення виключення дії"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__activity_state
+msgid "Activity State"
+msgstr "Стан дії"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Іконка типу дії"
+
+#. module: transport_order
+#: model_terms:ir.actions.act_window,help:transport_order.transport_carrier_action
+msgid "Add a carrier"
+msgstr "Додайте перевізника"
+
+#. module: transport_order
+#: model_terms:ir.actions.act_window,help:transport_order.transport_order_action
+msgid ""
+"Add the client, the route stops and the carrier, then confirm the order."
+msgstr "Вкажіть клієнта, точки маршруту й перевізника, потім підтвердьте заявку."
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "Agreed freight, net:"
+msgstr "Узгоджений фрахт, нетто:"
+
+#. module: transport_order
+#: model:ir.model.fields,help:transport_order.field_res_partner__is_carrier
+#: model:ir.model.fields,help:transport_order.field_res_users__is_carrier
+msgid ""
+"An external transport company that can be assigned to transport orders."
+msgstr "Зовнішня транспортна фірма, якій можна передати заявку."
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__message_attachment_count
+msgid "Attachment Count"
+msgstr "Підрахунок прикріплення"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_form
+msgid "Cancel Order"
+msgstr "Скасувати заявку"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_form
+msgid "Cancel this order? The carrier has to be informed separately."
+msgstr "Скасувати цю заявку? Перевізника треба повідомити окремо."
+
+#. module: transport_order
+#: model:ir.model.fields.selection,name:transport_order.selection__transport_order__state__cancelled
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_form
+msgid "Cancelled"
+msgstr "Скасована"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__cargo_description
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_form
+msgid "Cargo"
+msgstr "Вантаж"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_res_partner__is_carrier
+#: model:ir.model.fields,field_description:transport_order.field_res_users__is_carrier
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__carrier_id
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_form
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_search
+msgid "Carrier"
+msgstr "Перевізник"
+
+#. module: transport_order
+#: model:ir.actions.report,name:transport_order.action_report_carrier_order
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "Carrier Order"
+msgstr "Заявка перевізнику"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__carrier_price
+msgid "Carrier Price"
+msgstr "Ціна перевізника"
+
+#. module: transport_order
+#: model:ir.actions.act_window,name:transport_order.transport_carrier_action
+#: model:ir.ui.menu,name:transport_order.menu_transport_carriers
+#: model_terms:ir.ui.view,arch_db:transport_order.res_partner_view_search_transport
+msgid "Carriers"
+msgstr "Перевізники"
+
+#. module: transport_order
+#: model_terms:ir.actions.act_window,help:transport_order.transport_carrier_action
+msgid "Carriers are external transport companies you hand orders over to."
+msgstr "Перевізники — зовнішні транспортні фірми, яким ви передаєте заявки."
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__city
+msgid "City"
+msgstr "Місто"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__client_id
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_form
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_search
+msgid "Client"
+msgstr "Клієнт"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__client_price
+msgid "Client Price"
+msgstr "Ціна клієнта"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__client_ref
+msgid "Client Reference"
+msgstr "Номер клієнта"
+
+#. module: transport_order
+#: model:ir.actions.act_window,name:transport_order.transport_client_action
+#: model:ir.ui.menu,name:transport_order.menu_transport_clients
+msgid "Clients"
+msgstr "Клієнти"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__company_id
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__company_id
+msgid "Company"
+msgstr "Компанія"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__place_name
+msgid "Company / Place"
+msgstr "Фірма / місце"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_form
+msgid "Confirm"
+msgstr "Підтвердити"
+
+#. module: transport_order
+#: model:ir.model.fields.selection,name:transport_order.selection__transport_order__state__confirmed
+msgid "Confirmed"
+msgstr "Підтверджена"
+
+#. module: transport_order
+#: model:ir.model,name:transport_order.model_res_partner
+msgid "Contact"
+msgstr "Контакт"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__country_id
+msgid "Country"
+msgstr "Країна"
+
+#. module: transport_order
+#: model_terms:ir.actions.act_window,help:transport_order.transport_order_action
+msgid "Create your first transport order"
+msgstr "Створіть першу заявку на перевезення"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__create_uid
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__create_uid
+msgid "Created by"
+msgstr "Створив"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__create_date
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__create_date
+msgid "Created on"
+msgstr "Створено"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__currency_id
+msgid "Currency"
+msgstr "Валюта"
+
+#. module: transport_order
+#: model:ir.model.fields.selection,name:transport_order.selection__transport_order__vehicle_type__curtainsider
+msgid "Curtainsider"
+msgstr "Тент"
+
+#. module: transport_order
+#: model:ir.model.fields,help:transport_order.field_transport_order__is_adr
+msgid "Dangerous goods under the ADR agreement."
+msgstr "Небезпечний вантаж за угодою ADR."
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__date
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "Date"
+msgstr "Дата"
+
+#. module: transport_order
+#: model:ir.model.fields.selection,name:transport_order.selection__transport_order__state__delivered
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_form
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_search
+msgid "Delivered"
+msgstr "Доставлена"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__user_id
+#: model:res.groups,name:transport_order.group_transport_user
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_search
+msgid "Dispatcher"
+msgstr "Диспетчер"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_res_partner__display_name
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__display_name
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__display_name
+msgid "Display Name"
+msgstr "Назва для відображення"
+
+#. module: transport_order
+#: model:ir.model.fields.selection,name:transport_order.selection__transport_order__state__draft
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_search
+msgid "Draft"
+msgstr "Чернетка"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__message_follower_ids
+msgid "Followers"
+msgstr "Підписники"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Підписники (Партнери)"
+
+#. module: transport_order
+#: model:ir.model.fields,help:transport_order.field_transport_order__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Іконка з чудовим шрифтом, напр. fa-tasks"
+
+#. module: transport_order
+#: model:ir.model.fields,help:transport_order.field_transport_order_stop__note
+msgid "For the driver, for example the loading reference or the gate number."
+msgstr "Для водія, наприклад номер завантаження чи номер воріт."
+
+#. module: transport_order
+#: model:ir.model.fields,help:transport_order.field_transport_order__notes
+msgid "For the office only, never printed."
+msgstr "Лише для офісу, ніколи не друкується."
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_form
+msgid "For the office only. Not printed on the carrier order."
+msgstr "Лише для офісу. У заявку перевізнику не друкується."
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "Freight"
+msgstr "Фрахт"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__has_message
+msgid "Has Message"
+msgstr "Є повідомлення"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__time_window
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "Hours"
+msgstr "Години"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_res_partner__id
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__id
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__id
+msgid "ID"
+msgstr "ID"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__activity_exception_icon
+msgid "Icon"
+msgstr "Значок"
+
+#. module: transport_order
+#: model:ir.model.fields,help:transport_order.field_transport_order__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Іконка для визначення виключення дії."
+
+#. module: transport_order
+#: model:ir.model.fields,help:transport_order.field_transport_order__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Якщо позначено, то нові повідомлення будуть потребувати вашої уваги."
+
+#. module: transport_order
+#: model:ir.model.fields,help:transport_order.field_transport_order__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Якщо позначено, деякі повідомлення мають помилку доставки."
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_search
+msgid "In Progress"
+msgstr "У роботі"
+
+#. module: transport_order
+#: model:ir.model.fields.selection,name:transport_order.selection__transport_order__state__in_transit
+msgid "In Transit"
+msgstr "У дорозі"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__notes
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_form
+msgid "Internal Notes"
+msgstr "Внутрішні нотатки"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__message_is_follower
+msgid "Is Follower"
+msgstr "Стежить"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__write_uid
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__write_uid
+msgid "Last Updated by"
+msgstr "Востаннє оновив"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__write_date
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__write_date
+msgid "Last Updated on"
+msgstr "Останнє оновлення"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_form
+msgid "Loaded, In Transit"
+msgstr "Завантажено, в дорозі"
+
+#. module: transport_order
+#: model:ir.model.fields.selection,name:transport_order.selection__transport_order_stop__stop_type__loading
+msgid "Loading"
+msgstr "Завантаження"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__loading_date
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_search
+msgid "Loading Date"
+msgstr "Дата завантаження"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_search
+msgid "Loading Month"
+msgstr "Місяць завантаження"
+
+#. module: transport_order
+#: model:res.groups,name:transport_order.group_transport_manager
+msgid "Manager"
+msgstr "Менеджер"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__margin
+msgid "Margin"
+msgstr "Маржа"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__margin_ratio
+msgid "Margin %"
+msgstr "Маржа, %"
+
+#. module: transport_order
+#: model:ir.actions.act_window,name:transport_order.transport_order_action_analysis
+#: model:ir.ui.menu,name:transport_order.menu_transport_analysis
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_pivot
+msgid "Margin Analysis"
+msgstr "Аналіз маржі"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_graph
+msgid "Margin by Month"
+msgstr "Маржа за місяцями"
+
+#. module: transport_order
+#: model:ir.model.fields,help:transport_order.field_transport_order__margin_ratio
+msgid "Margin divided by the client price."
+msgstr "Маржа, поділена на ціну клієнта."
+
+#. module: transport_order
+#: model:ir.model.fields.selection,name:transport_order.selection__transport_order__vehicle_type__mega
+msgid "Mega Trailer"
+msgstr "Мега"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__message_has_error
+msgid "Message Delivery error"
+msgstr "Помилка доставлення повідомлення"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__message_ids
+msgid "Messages"
+msgstr "Повідомлення"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Дедлайн моєї дії"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_search
+msgid "My Orders"
+msgstr "Мої заявки"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_search
+msgid "Negative Margin"
+msgstr "Мінусова маржа"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_form
+msgid "Negative margin: the carrier costs more than the client pays."
+msgstr "Мінусова маржа: перевізник коштує більше, ніж платить клієнт."
+
+#. module: transport_order
+#. odoo-python
+#: code:addons/transport_order/models/transport_order.py:0
+msgid "New orders always start as Draft."
+msgstr "Нова заявка завжди починається як чернетка."
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Дедлайн наступної дії"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__activity_summary
+msgid "Next Activity Summary"
+msgstr "Підсумок наступної дії"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__activity_type_id
+msgid "Next Activity Type"
+msgstr "Тип наступної дії"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "No"
+msgstr "Ні"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_search
+msgid "No Carrier Yet"
+msgstr "Без перевізника"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__note
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "Note"
+msgstr "Примітка"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Кількість дій"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__message_has_error_counter
+msgid "Number of errors"
+msgstr "Кількість помилок"
+
+#. module: transport_order
+#: model:ir.model.fields,help:transport_order.field_transport_order__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Кількість повідомлень, які вимагають дії"
+
+#. module: transport_order
+#: model:ir.model.fields,help:transport_order.field_transport_order__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Кількість повідомлень з помилковою дставкою"
+
+#. module: transport_order
+#. odoo-python
+#: code:addons/transport_order/models/transport_order.py:0
+msgid "Only a Transport Manager can reopen a cancelled order."
+msgstr "Відновити скасовану заявку може лише менеджер перевезень."
+
+#. module: transport_order
+#: model:ir.model.fields,help:transport_order.field_transport_order_stop__time_window
+msgid "Opening hours of the place, for example 08:00-14:00."
+msgstr "Години роботи місця, наприклад 08:00-14:00."
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__order_id
+msgid "Order"
+msgstr "Заявка"
+
+#. module: transport_order
+#. odoo-python
+#: code:addons/transport_order/models/transport_order.py:0
+msgid "Order %(name)s cannot be confirmed yet. Missing: %(missing)s."
+msgstr "Заявку %(name)s ще не можна підтвердити. Бракує: %(missing)s."
+
+#. module: transport_order
+#. odoo-python
+#: code:addons/transport_order/models/transport_order.py:0
+msgid "Order %(name)s is %(state)s: its terms can no longer be changed."
+msgstr "Заявка %(name)s має статус «%(state)s»: її умови вже не можна змінити."
+
+#. module: transport_order
+#. odoo-python
+#: code:addons/transport_order/models/transport_order_stop.py:0
+msgid "Order %(name)s is closed: its stops can no longer be changed."
+msgstr "Заявку %(name)s закрито: точки маршруту вже не можна змінити."
+
+#. module: transport_order
+#. odoo-python
+#: code:addons/transport_order/models/transport_order.py:0
+msgid "Order %(name)s is in progress. Cancel it before deleting."
+msgstr "Заявка %(name)s у роботі. Скасуйте її перед видаленням."
+
+#. module: transport_order
+#. odoo-python
+#: code:addons/transport_order/models/transport_order.py:0
+msgid "Order %(name)s: an unloading cannot happen before the first loading."
+msgstr "Заявка %(name)s: розвантаження не може бути раніше за перше завантаження."
+
+#. module: transport_order
+#. odoo-python
+#: code:addons/transport_order/models/transport_order.py:0
+msgid "Order %(name)s: cannot go from %(old)s to %(new)s."
+msgstr "Заявка %(name)s: не можна перейти зі статусу «%(old)s» у «%(new)s»."
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__name
+msgid "Order No."
+msgstr "Номер заявки"
+
+#. module: transport_order
+#: model:ir.ui.menu,name:transport_order.menu_transport_orders
+msgid "Orders"
+msgstr "Заявки"
+
+#. module: transport_order
+#: model:ir.ui.menu,name:transport_order.menu_transport_partners
+msgid "Partners"
+msgstr "Контрагенти"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "Place"
+msgstr "Місце"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_form
+msgid "Planning"
+msgstr "Планування"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid ""
+"Please confirm this order by return e-mail. Send the signed CMR and the invoice\n"
+"                    with this order number. Reloading the goods onto another vehicle requires our written consent."
+msgstr "Підтвердьте, будь ласка, цю заявку у відповідь на e-mail. Надішліть підписану CMR і рахунок з цим номером заявки. Перевантаження на інший транспорт — лише з нашої письмової згоди."
+
+#. module: transport_order
+#: model:ir.model.constraint,message:transport_order.constraint_transport_order_prices_not_negative
+msgid "Prices cannot be negative."
+msgstr "Ціни не можуть бути від'ємними."
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_form
+msgid "Print Carrier Order"
+msgstr "Друк заявки перевізнику"
+
+#. module: transport_order
+#: model:ir.model.fields.selection,name:transport_order.selection__transport_order__vehicle_type__reefer
+msgid "Reefer"
+msgstr "Рефрижератор"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_form
+msgid "Reopen as Draft"
+msgstr "Повернути в чернетку"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__activity_user_id
+msgid "Responsible User"
+msgstr "Відповідальний користувач"
+
+#. module: transport_order
+#: model:ir.model.fields.selection,name:transport_order.selection__transport_order__vehicle_type__rigid
+msgid "Rigid Truck"
+msgstr "Одиночна (соло)"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__route
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_form
+msgid "Route"
+msgstr "Маршрут"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__sequence
+msgid "Sequence"
+msgstr "Послідовність"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__state
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_search
+msgid "Status"
+msgstr "Статус"
+
+#. module: transport_order
+#: model:ir.model.fields,help:transport_order.field_transport_order__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "Етап заснований на діях\nПротерміновано: термін виконання вже минув\nСьогодні: дата дії сьогодні\nЗаплановано: майбутні дії."
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__stop_ids
+msgid "Stops"
+msgstr "Точки маршруту"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__street
+msgid "Street"
+msgstr "Вулиця"
+
+#. module: transport_order
+#: model:ir.model.fields,help:transport_order.field_transport_order__client_ref
+msgid ""
+"The client's own order or loading number. It is printed on the carrier order"
+" for the driver."
+msgstr "Номер замовлення чи завантаження з боку клієнта. Друкується в заявці перевізнику для водія."
+
+#. module: transport_order
+#: model:ir.model.constraint,message:transport_order.constraint_transport_order_name_company_uniq
+msgid "The order number must be unique per company."
+msgstr "Номер заявки має бути унікальним у межах компанії."
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_list
+msgid "Total"
+msgstr "Разом"
+
+#. module: transport_order
+#: model:ir.ui.menu,name:transport_order.menu_transport_root
+#: model:res.groups.privilege,name:transport_order.res_groups_privilege_transport
+msgid "Transport"
+msgstr "Перевезення"
+
+#. module: transport_order
+#: model:ir.model,name:transport_order.model_transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_form
+msgid "Transport Order"
+msgstr "Заявка на перевезення"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_res_partner__transport_order_count
+#: model:ir.model.fields,field_description:transport_order.field_res_users__transport_order_count
+msgid "Transport Order Count"
+msgstr "Кількість заявок"
+
+#. module: transport_order
+#: model:ir.model,name:transport_order.model_transport_order_stop
+msgid "Transport Order Stop"
+msgstr "Точка маршруту заявки"
+
+#. module: transport_order
+#: model:ir.actions.act_window,name:transport_order.transport_order_action
+#: model_terms:ir.ui.view,arch_db:transport_order.res_partner_view_form_transport
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_list
+#: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_search
+msgid "Transport Orders"
+msgstr "Заявки на перевезення"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__stop_type
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "Type"
+msgstr "Тип"
+
+#. module: transport_order
+#: model:ir.model.fields,help:transport_order.field_transport_order__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Тип дії виключення на записі."
+
+#. module: transport_order
+#: model:ir.model.fields.selection,name:transport_order.selection__transport_order_stop__stop_type__unloading
+msgid "Unloading"
+msgstr "Розвантаження"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__unloading_date
+msgid "Unloading Date"
+msgstr "Дата розвантаження"
+
+#. module: transport_order
+#. odoo-python
+#: code:addons/transport_order/models/transport_order.py:0
+msgid "Use the buttons on the order to change its status."
+msgstr "Статус змінюється лише кнопками на заявці."
+
+#. module: transport_order
+#: model:ir.model.fields.selection,name:transport_order.selection__transport_order__vehicle_type__van
+msgid "Van"
+msgstr "Бус"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__vehicle_type
+msgid "Vehicle Type"
+msgstr "Тип транспорту"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order__weight_kg
+msgid "Weight (kg)"
+msgstr "Вага (кг)"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "Yes"
+msgstr "Так"
+
+#. module: transport_order
+#: model:ir.model.fields,field_description:transport_order.field_transport_order_stop__zip
+msgid "ZIP"
+msgstr "Індекс"
+
+#. module: transport_order
+#. odoo-python
+#: code:addons/transport_order/models/transport_order.py:0
+msgid "a carrier"
+msgstr "перевізника"
+
+#. module: transport_order
+#. odoo-python
+#: code:addons/transport_order/models/transport_order.py:0
+msgid "a loading stop with a date"
+msgstr "точки завантаження з датою"
+
+#. module: transport_order
+#. odoo-python
+#: code:addons/transport_order/models/transport_order.py:0
+msgid "an unloading stop with a date"
+msgstr "точки розвантаження з датою"
+
+#. module: transport_order
+#: model_terms:ir.ui.view,arch_db:transport_order.report_carrier_order_document
+msgid "kg"
+msgstr "кг"
+
+#. module: transport_order
+#. odoo-python
+#: code:addons/transport_order/models/transport_order.py:0
+msgid "the carrier price"
+msgstr "ціни перевізника"
+
+#. module: transport_order
+#. odoo-python
+#: code:addons/transport_order/models/transport_order.py:0
+msgid "the client price"
+msgstr "ціни клієнта"

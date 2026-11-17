@@ -1,16 +1,19 @@
 """Screenshots for the README from a local Odoo with demo data.
 
 Usage (Odoo running via `docker compose up -d`, module installed with demo data):
-    python docs/take_screenshots.py
+    python docs/take_screenshots.py            # into docs/
+    python docs/take_screenshots.py uk         # into docs/uk/ (the admin user's language must be Ukrainian)
 
-Logs in with the local throwaway admin account and saves PNG files (and one sample PDF) next to this script.
+Logs in with the local throwaway admin account and saves PNG files (and one sample PDF).
 """
+import sys
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
 BASE = "http://localhost:8069"
-OUT = Path(__file__).resolve().parent
+OUT = Path(__file__).resolve().parent / (sys.argv[1] if len(sys.argv) > 1 else "")
+OUT.mkdir(exist_ok=True)
 ACTION = "/odoo/action-transport_order.transport_order_action"
 ANALYSIS = "/odoo/action-transport_order.transport_order_action_analysis"
 ORDER_ID = 3  # demo order in transit with three stops
