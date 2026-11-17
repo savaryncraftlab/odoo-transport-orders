@@ -222,6 +222,11 @@ class TransportOrder(models.Model):
                 _("Order %(name)s is in progress. Cancel it before deleting.", name=active[0].name)
             )
 
+    def _creation_message(self):
+        # Odoo's generic "%s created" does not agree in gender in Ukrainian or Polish, so the order has its own text.
+        self.ensure_one()
+        return _("Transport order created")
+
     # ------------------------------------------------------------------
     # Status flow
     # ------------------------------------------------------------------

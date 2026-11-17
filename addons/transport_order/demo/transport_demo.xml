@@ -66,13 +66,13 @@
         <field name="client_price">1350</field>
         <field name="carrier_price">1050</field>
         <field name="vehicle_type">mega</field>
-        <field name="cargo_description">Upholstered furniture, 33 pallets</field>
+        <field name="cargo_description">Мʼякі меблі, 33 палети</field>
         <field name="weight_kg">9800</field>
         <field name="stop_ids" eval="[
             Command.create({'sequence': 10, 'stop_type': 'loading', 'date': (DateTime.today() - relativedelta(days=12)).strftime('%Y-%m-%d'),
-                            'time_window': '07:00-12:00', 'place_name': 'Mebel-Pol Demo, warehouse 2', 'zip': '63-600', 'city': 'Kępno', 'country_id': ref('base.pl')}),
+                            'time_window': '07:00-12:00', 'place_name': 'Mebel-Pol Demo, склад 2', 'zip': '63-600', 'city': 'Kępno', 'country_id': ref('base.pl')}),
             Command.create({'sequence': 20, 'stop_type': 'unloading', 'date': (DateTime.today() - relativedelta(days=11)).strftime('%Y-%m-%d'),
-                            'time_window': '08:00-16:00', 'place_name': 'Furniture store', 'zip': '10115', 'city': 'Berlin', 'country_id': ref('base.de')}),
+                            'time_window': '08:00-16:00', 'place_name': 'Меблевий магазин', 'zip': '10115', 'city': 'Berlin', 'country_id': ref('base.de')}),
         ]"/>
     </record>
 
@@ -85,9 +85,9 @@
         <field name="client_price">1980</field>
         <field name="carrier_price">2050</field>
         <field name="vehicle_type">curtainsider</field>
-        <field name="cargo_description">Wooden panels, 24 pallets</field>
+        <field name="cargo_description">Деревʼяні панелі, 24 палети</field>
         <field name="weight_kg">21500</field>
-        <field name="notes">Carrier price went up after the client had already agreed. Talk to the client about the next loads.</field>
+        <field name="notes">Перевізник підняв ціну, коли клієнт уже погодив свою. Поговорити з клієнтом про наступні завантаження.</field>
         <field name="stop_ids" eval="[
             Command.create({'sequence': 10, 'stop_type': 'loading', 'date': (DateTime.today() - relativedelta(days=9)).strftime('%Y-%m-%d'),
                             'zip': '63-400', 'city': 'Ostrów Wielkopolski', 'country_id': ref('base.pl')}),
@@ -105,11 +105,11 @@
         <field name="client_price">1450</field>
         <field name="carrier_price">1150</field>
         <field name="vehicle_type">curtainsider</field>
-        <field name="cargo_description">Household appliances, 30 pallets</field>
+        <field name="cargo_description">Побутова техніка, 30 палет</field>
         <field name="weight_kg">12400</field>
         <field name="stop_ids" eval="[
             Command.create({'sequence': 10, 'stop_type': 'loading', 'date': (DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d'),
-                            'zip': '60-001', 'city': 'Poznań', 'country_id': ref('base.pl'), 'note': 'Gate 4, loading ref NW-55102'}),
+                            'zip': '60-001', 'city': 'Poznań', 'country_id': ref('base.pl'), 'note': 'Ворота 4, номер завантаження NW-55102'}),
             Command.create({'sequence': 20, 'stop_type': 'unloading', 'date': DateTime.today().strftime('%Y-%m-%d'),
                             'zip': '20095', 'city': 'Hamburg', 'country_id': ref('base.de')}),
             Command.create({'sequence': 30, 'stop_type': 'unloading', 'date': (DateTime.today() + relativedelta(days=1)).strftime('%Y-%m-%d'),
@@ -126,7 +126,7 @@
         <field name="client_price">1700</field>
         <field name="carrier_price">1380</field>
         <field name="vehicle_type">mega</field>
-        <field name="cargo_description">Sofas, 28 pallets</field>
+        <field name="cargo_description">Дивани, 28 палет</field>
         <field name="weight_kg">8300</field>
         <field name="stop_ids" eval="[
             Command.create({'sequence': 10, 'stop_type': 'loading', 'date': (DateTime.today() + relativedelta(days=2)).strftime('%Y-%m-%d'),
@@ -142,7 +142,7 @@
         <field name="currency_id" ref="base.EUR"/>
         <field name="client_price">1250</field>
         <field name="vehicle_type">curtainsider</field>
-        <field name="cargo_description">Timber, 20 pallets</field>
+        <field name="cargo_description">Пиломатеріали, 20 палет</field>
         <field name="weight_kg">18000</field>
         <field name="stop_ids" eval="[
             Command.create({'sequence': 10, 'stop_type': 'loading', 'date': (DateTime.today() + relativedelta(days=5)).strftime('%Y-%m-%d'),
@@ -159,7 +159,7 @@
         <field name="currency_id" ref="base.EUR"/>
         <field name="client_price">980</field>
         <field name="carrier_price">800</field>
-        <field name="cargo_description">Paper rolls, 12 pallets</field>
+        <field name="cargo_description">Рулони паперу, 12 палет</field>
         <field name="weight_kg">9000</field>
         <field name="stop_ids" eval="[
             Command.create({'sequence': 10, 'stop_type': 'loading', 'date': (DateTime.today() + relativedelta(days=4)).strftime('%Y-%m-%d'),

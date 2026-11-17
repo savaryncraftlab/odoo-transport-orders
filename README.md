@@ -23,7 +23,7 @@ and I checked the result in Odoo and with the automated tests.
 | Access | Dispatcher: full daily work, no delete. Manager: can delete draft/cancelled orders and reopen cancelled ones. Multi-company record rules |
 | Views | List, form with chatter (field tracking), kanban by status, pivot and graph for margin by carrier and month, search filters and group-bys |
 | Partners | "Carrier" checkbox on contacts, Clients and Carriers menus, smart button with the partner's orders |
-| Languages | English source strings, full Ukrainian translation (`i18n/uk.po`). The carrier order PDF is printed in the carrier's language (`t-lang`) |
+| Languages | English source strings, full Ukrainian translation (`i18n/uk.po`). The carrier order PDF is printed in the carrier's language (`t-lang`). Demo texts (cargo, notes) are in Ukrainian |
 
 ## Screenshots
 

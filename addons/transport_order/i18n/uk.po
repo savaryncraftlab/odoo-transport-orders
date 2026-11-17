@@ -735,6 +735,12 @@ msgid "Transport Order Stop"
 msgstr "Точка маршруту заявки"
 
 #. module: transport_order
+#. odoo-python
+#: code:addons/transport_order/models/transport_order.py:0
+msgid "Transport order created"
+msgstr "Заявку на перевезення створено"
+
+#. module: transport_order
 #: model:ir.actions.act_window,name:transport_order.transport_order_action
 #: model_terms:ir.ui.view,arch_db:transport_order.res_partner_view_form_transport
 #: model_terms:ir.ui.view,arch_db:transport_order.transport_order_view_list
